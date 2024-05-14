@@ -1,0 +1,14 @@
+dotnet new mvc -n Dot_Net_Project
+##
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Pomelo.EntityFrameworkCore.MySql
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet tool install --global dotnet-ef
+##
+export PATH="$PATH:$HOME/.dotnet/tools" 
+#########################################
+dotnet ef migrations add init
+dotnet ef database update
+dotnet run
